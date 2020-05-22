@@ -22,9 +22,13 @@ sys	 0m0,627s.
 
 ## Files contents
 `RegScript.sml`: Contains regular expressions and their matchers.
+
 `reggenScript.sml`: Contains the code required to extract the code.
+
 `reggenML.sml	`	: Contains the code that got synthesised from HOL4 implementation to SML.
+
 `regLib.sml	`: The library of the generated code.
+
 `test.sml` and `Performance_test.sml` : SML files for testing.
 
 
