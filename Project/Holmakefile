@@ -1,1 +1,6 @@
-INCLUDES = ../../HOL/src/emit/ML
+INCLUDES = $(HOLDIR)/src/emit/ML
+all: test.exe
+.PHONY: all
+
+test.exe: test.uo
+	$(HOLMOSMLC) -o $@ $<
