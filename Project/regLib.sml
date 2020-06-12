@@ -51,32 +51,3 @@ end
 
 end
 
-
-(*)
-
-  fun r2r r =
-    case r of
-      Epsilon            => regexpMatch.Epsilon
-    | Symb c           => regexpMatch.Symbs (pred_to_set (fn x => x = c))
-    | Sum (p, q)      => regexpMatch.Sum (r2r p, r2r q)
-    | Dot (p, q)    => regexpMatch.Dot (r2r p, r2r q) 
-    | Star r       => regexpMatch.Star (r2r r)
-
-
-
-
-
-structure regacceptM :> regLib = 
-struct
-  fun match r1 (str:string) = reggenML.acceptM (reggenML.MARK_REG r1) (explode str);
-end
-
-structure regacceptCM :> regLib = 
-struct
-  fun match r1 (str:string) = reggenML.acceptCM (reggenML.CACHE_REG (reggenML.MARK_REG r1)) (explode str);
-end
-
-
-
-*)
-
